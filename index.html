@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<meta name="theme-color" content="#04050a" />
+<title>Amna — One Year Around Our Sun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ░░ STARRY UNIVERSE CANVAS ░░ -->
+<canvas id="universe-canvas"></canvas>
+<div class="nebula nebula-a"></div>
+<div class="nebula nebula-b"></div>
+<div class="nebula nebula-c"></div>
+
+<!-- ░░ AUDIO ORB ░░ -->
+<button id="audio-orb" class="audio-orb" aria-label="Play Eastside">
+  <span class="orb-ring"></span>
+  <span class="orb-disc"><span class="orb-core"></span></span>
+  <span class="orb-meta">
+    <span class="orb-title">Eastside</span>
+    <span class="orb-sub">now playing</span>
+  </span>
+  <audio id="bg-audio" loop preload="auto">
+    <source src="assets/audio/eastside.mp3" type="audio/mpeg">
+  </audio>
+</button>
+
+<!-- ░░ OPENING GATE ░░ -->
+<section id="gate" class="gate">
+  <div class="gate-inner">
+    <p class="gate-kicker">A SMALL UNIVERSE, BUILT FOR ONE PERSON</p>
+    <h1 class="gate-title">AMNA</h1>
+    <p class="gate-sub">One year. Twelve months. Every orbit ours.</p>
+    <button id="enter-btn" class="enter-btn">
+      <span>Enter the Universe</span>
+      <span class="enter-arrow">&rarr;</span>
+    </button>
+    <p class="gate-hint">Best experienced with sound on</p>
+  </div>
+</section>
+
+<!-- ░░ MAIN EXPERIENCE ░░ -->
+<main id="experience" class="experience" aria-hidden="true">
+
+  <!-- HERO ORBIT -->
+  <section class="hero">
+    <div class="hero-badge"><span class="live-dot"></span>ORBIT 365 · COMPLETE</div>
+
+    <div class="hero-system">
+      <div class="sys-ring r1"></div>
+      <div class="sys-ring r2"></div>
+      <div class="sys-ring r3"></div>
+      <div class="sys-ring r4"></div>
+      <div class="sys-sun">
+        <div class="sun-body"></div>
+        <div class="sun-flare"></div>
+      </div>
+      <div class="sys-planet sp1"><span class="sp-dot"></span></div>
+      <div class="sys-planet sp2"><span class="sp-dot"></span></div>
+      <div class="sys-planet sp3"><span class="sp-dot"></span></div>
+    </div>
+
+    <h2 class="hero-names">Amna <span class="hero-amp">&amp;</span> Sheru</h2>
+    <p class="hero-dates">12 Nov 2025 &mdash; 12 Nov 2026</p>
+
+    <div class="hero-counter" id="counter">
+      <div class="ct"><span class="ct-num" id="ct-days">365</span><span class="ct-lbl">days</span></div>
+      <div class="ct"><span class="ct-num" id="ct-hrs">00</span><span class="ct-lbl">hours</span></div>
+      <div class="ct"><span class="ct-num" id="ct-min">00</span><span class="ct-lbl">mins</span></div>
+      <div class="ct"><span class="ct-num" id="ct-sec">00</span><span class="ct-lbl">secs</span></div>
+    </div>
+
+    <div class="scroll-cue"><span>SCROLL TO TRAVEL</span><span class="chev">&darr;</span></div>
+  </section>
+
+  <!-- ░░ PLANET MAP / CHAPTER SELECT ░░ -->
+  <section class="map-section">
+    <p class="sec-kicker">OUR SOLAR SYSTEM</p>
+    <h2 class="sec-title">Four worlds we built</h2>
+    <p class="sec-desc">Tap a planet to travel to that chapter</p>
+
+    <div class="planet-map">
+      <div class="map-orbit mo1"></div>
+      <div class="map-orbit mo2"></div>
+      <div class="map-orbit mo3"></div>
+      <div class="map-orbit mo4"></div>
+      <div class="map-core"><span>AMNA</span></div>
+
+      <button class="map-planet mp1" data-target="chapter-1">
+        <span class="mp-ball ball-1"></span>
+        <span class="mp-label">I</span>
+      </button>
+      <button class="map-planet mp2" data-target="chapter-2">
+        <span class="mp-ball ball-2"></span>
+        <span class="mp-label">II</span>
+      </button>
+      <button class="map-planet mp3" data-target="chapter-3">
+        <span class="mp-ball ball-3"></span>
+        <span class="mp-label">III</span>
+      </button>
+      <button class="map-planet mp4" data-target="finale">
+        <span class="mp-ball ball-4"></span>
+        <span class="mp-label">&starf;</span>
+      </button>
+    </div>
+
+    <div class="map-legend">
+      <span>I &middot; The Spark</span>
+      <span>II &middot; Through the Storm</span>
+      <span>III &middot; Summer &amp; Autumn</span>
+      <span>&starf; Our Anniversary</span>
+    </div>
+  </section>
+
+  <!-- ═══════════ CHAPTER I ═══════════ -->
+  <section class="chapter" id="chapter-1">
+    <div class="ch-planet planet-1">
+      <div class="ch-glow"></div>
+      <div class="ch-body"></div>
+      <div class="ch-ring"></div>
+    </div>
+    <div class="ch-head">
+      <p class="ch-num">CHAPTER I</p>
+      <h2 class="ch-name">The Spark</h2>
+      <p class="ch-range">November 2025 — February 2026</p>
+      <p class="ch-lead">Where a handmade bracelet, a Hot Wheels car, and a hundred all-day hangouts became the whole world.</p>
+    </div>
+
+    <div class="month">
+      <div class="mo-head"><span class="mo-tag">NOVEMBER 2025</span><span class="mo-idx">01</span></div>
+      <h3 class="mo-name">The first gifts, ever</h3>
+      <div class="gallery g2">
+        <figure class="shot" data-cap="The bracelet you made with your own hands">
+          <img src="assets/photos/nov_bracelet.jpeg" alt="Handmade bracelet" loading="lazy">
+          <figcaption>The bracelet you made</figcaption>
+        </figure>
+        <figure class="shot" data-cap="The Hot Wheels I hunted for an hour">
+          <img src="assets/photos/nov_hotwheels.jpeg" alt="Hot Wheels car" loading="lazy">
+          <figcaption>Searched an hour for this</figcaption>
+        </figure>
+      </div>
+      <blockquote class="note">
+        <p>Hey Amna, I still remember you putting that bracelet on my hand with so much love... honestly I will never ever forget that moment. And the first time we met, when I searched for a whole hour just to find you the perfect Hot Wheels car... man, I love you so much.</p>
+        <footer><span class="sig">— Sheru</span><button class="heart" data-count="1">&#10084;</button></footer>
+      </blockquote>
+    </div>
+
+    <div class="month">
+      <div class="mo-head"><span class="mo-tag">DECEMBER 2025</span><span class="mo-idx">02</span></div>
+      <h3 class="mo-name">College jao, hangout, wapis aao, hangout</h3>
+      <div class="gallery g2">
+        <figure class="shot" data-cap="Those warm late-night eyes">
+          <img src="assets/photos/dec_talk.jpeg" alt="Late night talks" loading="lazy">
+          <figcaption>Those warm eyes</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Holding onto my arm all night">
+          <img src="assets/photos/dec_mclaren.jpeg" alt="Night out" loading="lazy">
+          <figcaption>Holding onto my arm</figcaption>
+        </figure>
+      </div>
+      <blockquote class="note">
+        <p>Oh man, December was such a high for us. You still didn't trust me completely back then haha, but damn... we used to hang out the whole day. College jao and hangout, wapis aao and hangout. I really miss those memories — not in a sad way, but with so much warmth knowing how genuinely happy we were together, and how much I loved you.</p>
+        <footer><span class="sig">— Sheru</span><button class="heart" data-count="1">&#10084;</button></footer>
+      </blockquote>
+    </div>
+
+    <div class="month">
+      <div class="mo-head"><span class="mo-tag">JANUARY 2026</span><span class="mo-idx">03</span></div>
+      <h3 class="mo-name">Dil hi nahi bharta tha</h3>
+      <div class="gallery g3">
+        <figure class="shot hero-shot" data-cap="11 hours 55 minutes 47 seconds on call">
+          <img src="assets/photos/jan_12hr_call.jpeg" alt="Long call" loading="lazy">
+          <figcaption>11:55:47 &middot; on call</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Car ride chaos">
+          <img src="assets/photos/jan_car_shades.jpeg" alt="Car ride" loading="lazy">
+          <figcaption>Car ride chaos</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Matching leather jackets">
+          <img src="assets/photos/jan_leather_jackets.jpeg" alt="Matching jackets" loading="lazy">
+          <figcaption>Matching jackets</figcaption>
+        </figure>
+      </div>
+      <blockquote class="note">
+        <p>Ohhh mannn January ka kya hi boloon meri jaan... Poora poora din call par rehte thay aur bas pata nahi kya kya baatein karte thay, dil hi nahi bharta thaaaa haha. Larte bhi thay magar yaar pyaar bhi utna hi tha. January mein bhi itna hangout kiya, itna maza kiya... honestly poore saal ka ek bhi month aisa nahi tha jisme mera pyaar tumse 2x na hua ho meri jaan.</p>
+        <footer><span class="sig">— Sheru</span><button class="heart" data-count="1">&#10084;</button></footer>
+      </blockquote>
+    </div>
+
+    <div class="month">
+      <div class="mo-head"><span class="mo-tag">FEBRUARY 2026</span><span class="mo-idx">04</span></div>
+      <h3 class="mo-name">Felt like a dream</h3>
+      <div class="gallery g4">
+        <figure class="shot" data-cap="Holding hands under the streetlights">
+          <img src="assets/photos/feb_night_street_balloon.jpeg" alt="Street balloon" loading="lazy">
+          <figcaption>That heart balloon</figcaption>
+        </figure>
+        <figure class="shot" data-cap="The car trunk surprise">
+          <img src="assets/photos/feb_car_trunk_gifts.jpeg" alt="Car trunk gifts" loading="lazy">
+          <figcaption>The car surprise</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Held close">
+          <img src="assets/photos/feb_hug_mirror.jpeg" alt="Cozy hug" loading="lazy">
+          <figcaption>Held close</figcaption>
+        </figure>
+        <figure class="shot" data-cap="That smile at night">
+          <img src="assets/photos/feb_car_night_smile.jpeg" alt="Night smile" loading="lazy">
+          <figcaption>That smile</figcaption>
+        </figure>
+      </div>
+      <blockquote class="note">
+        <p>Oh mannn how can I forget our February... shit honestly felt like a dream. Even though we were under so much pressure because of studies, andar se bilkul theek thay. We had our fights, but I always held you and handled everything. And literally chup ke nikkah karne ke plans banate thay yaar... you were so genuinely happy with me, and seeing you that happy is everything to me.</p>
+        <footer><span class="sig">— Sheru</span><button class="heart" data-count="1">&#10084;</button></footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ═══════════ CHAPTER II ═══════════ -->
+  <section class="chapter" id="chapter-2">
+    <div class="ch-planet planet-2">
+      <div class="ch-glow"></div>
+      <div class="ch-body"></div>
+      <div class="ch-ring"></div>
+    </div>
+    <div class="ch-head">
+      <p class="ch-num">CHAPTER II</p>
+      <h2 class="ch-name">Through the Storm</h2>
+      <p class="ch-range">March 2026 — June 2026</p>
+      <p class="ch-lead">Accidents, exams, tears, and twenty-hour calls — and still choosing each other every single morning.</p>
+    </div>
+
+    <div class="month">
+      <div class="mo-head"><span class="mo-tag">MARCH 2026</span><span class="mo-idx">05</span></div>
+      <h3 class="mo-name">Hard nights &amp; the best birthday</h3>
+      <div class="gallery g4">
+        <figure class="shot" data-cap="Right by your side through it">
+          <img src="assets/photos/mar_after_accident_together.jpeg" alt="Together after accident" loading="lazy">
+          <figcaption>Right by your side</figcaption>
+        </figure>
+        <figure class="shot" data-cap="The birthday gift you gave me">
+          <img src="assets/photos/mar_bday_porsche_gifts.jpeg" alt="Birthday gifts" loading="lazy">
+          <figcaption>My favourite birthday ever</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Sleeping on call together">
+          <img src="assets/photos/mar_sleeping_call.jpeg" alt="Sleeping on call" loading="lazy">
+          <figcaption>Sleeping on call</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Taking care of you">
+          <img src="assets/photos/mar_accident_cut_care.jpeg" alt="Caring for you" loading="lazy">
+          <figcaption>Caring for you</figcaption>
+        </figure>
+      </div>
+      <blockquote class="note">
+        <p>Mannnn March was so much... I still remember the hard nights you had to go through because of your accident, especially right after prof. I really thought things would be calm, but being there for each other, all those late-night calls, and sleeping on call together made our bond unbreakable. And then you turned around and made my birthday the absolute best — honestly my favourite birthday of all time.</p>
+        <footer><span class="sig">— Sheru</span><button class="heart" data-count="1">&#10084;</button></footer>
+      </blockquote>
+    </div>
+
+    <div class="month">
+      <div class="mo-head"><span class="mo-tag">APRIL 2026</span><span class="mo-idx">06</span></div>
+      <h3 class="mo-name">Like a married couple</h3>
+      <div class="gallery g4">
+        <figure class="shot" data-cap="College corridor moments">
+          <img src="assets/photos/apr_corridor_touch_couple.jpeg" alt="Corridor" loading="lazy">
+          <figcaption>College corridors</figcaption>
+        </figure>
+        <figure class="shot" data-cap="My cuto measuring her height">
+          <img src="assets/photos/apr_height_chart_cute.jpeg" alt="Height chart" loading="lazy">
+          <figcaption>My cuto</figcaption>
+        </figure>
+        <figure class="shot" data-cap="My absolute hottie">
+          <img src="assets/photos/apr_amino_red_dress.jpeg" alt="Red dress" loading="lazy">
+          <figcaption>My hottie</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Doctor Sheru">
+          <img src="assets/photos/apr_sheru_lab_coat.jpeg" alt="Lab coat" loading="lazy">
+          <figcaption>Doctor Sheru</figcaption>
+        </figure>
+      </div>
+      <blockquote class="note">
+        <p>April was such a blast as well... I still remember sleeping together on call, waking up, and meeting right back at college like a literally married couple haha. I loved every single part of it. OSPE ki tiyari kam aur date zyada maarnay jaate thay. Everything felt nice. I trusted you fully with everything — no matter what was going on at home, I held onto you as my safe space and my partner, and loved you so much, my cuto hottie.</p>
+        <footer><span class="sig">— Sheru</span><button class="heart" data-count="1">&#10084;</button></footer>
+      </blockquote>
+    </div>
+
+    <div class="month">
+      <div class="mo-head"><span class="mo-tag">MAY 2026</span><span class="mo-idx">07</span></div>
+      <h3 class="mo-name">Breakups, patchups, midnight walks</h3>
+      <div class="gallery g4">
+        <figure class="shot" data-cap="Carried you in my arms">
+          <img src="assets/photos/may_mirror_lift_stickers.jpeg" alt="Mirror lift" loading="lazy">
+          <figcaption>Carried in my arms</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Pyar ni krta &middot; dil bechain">
+          <img src="assets/photos/may_cafe_argument_meme.jpeg" alt="Cafe meme" loading="lazy">
+          <figcaption>Our signature fight</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Carrying you down the street at 2am">
+          <img src="assets/photos/may_night_carrying_her_street.jpeg" alt="Night street" loading="lazy">
+          <figcaption>Carrying you home</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Our little baby">
+          <img src="assets/photos/may_hamster_on_head.jpeg" alt="Hamster" loading="lazy">
+          <figcaption>Our little baby</figcaption>
+        </figure>
+      </div>
+      <div class="gallery g4">
+        <figure class="shot" data-cap="Our signature cafe fight">
+          <img src="assets/photos/may_cafe_smiling_together.jpeg" alt="Cafe together" loading="lazy">
+          <figcaption>After the fight</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Makeup hugs by the brick wall">
+          <img src="assets/photos/may_hug_brick_wall.jpeg" alt="Hug by wall" loading="lazy">
+          <figcaption>Makeup hug</figcaption>
+        </figure>
+      </div>
+      <blockquote class="note">
+        <p>Damnn May was so much... supply aayi thi aur sakhtiyan thin, breakup patchup bhi ho rahay thay, aur PYAAR bhi bohot bohot zyada tha. Ek chota sa baby bhi life mein tha tumhare paas, aur bas hum dono saath thay toh har cheez aasan lagti thi. Raat ke do do bajay tak baith ke rotay thay aur subah ek doosray ki baahon mein aakar main mana leta tha haha. I promise you start se end tak same pyaar raha mera — kisi bhi cheez ko tumse upar nahi aane diya. Kasam mere khuda ki, pyaar sirf tumse hai meri jaan.</p>
+        <footer><span class="sig">— Sheru</span><button class="heart" data-count="1">&#10084;</button></footer>
+      </blockquote>
+    </div>
+
+    <div class="month">
+      <div class="mo-head"><span class="mo-tag">JUNE 2026</span><span class="mo-idx">08</span></div>
+      <h3 class="mo-name">Pure smiles &amp; endless warmth</h3>
+      <div class="gallery g4">
+        <figure class="shot" data-cap="Stunning on the swing">
+          <img src="assets/photos/jun_amino_swing_black_dress.jpeg" alt="Swing" loading="lazy">
+          <figcaption>On the swing</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Cozy peace with you">
+          <img src="assets/photos/jun_cozy_lounge_together.jpeg" alt="Cozy lounge" loading="lazy">
+          <figcaption>Cozy peace</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Side by side always">
+          <img src="assets/photos/jun_night_street_together.jpeg" alt="Night walk" loading="lazy">
+          <figcaption>Side by side</figcaption>
+        </figure>
+        <figure class="shot" data-cap="My gorgeous girl">
+          <img src="assets/photos/jun_amino_leather_jacket_pose.jpeg" alt="Leather jacket" loading="lazy">
+          <figcaption>My gorgeous girl</figcaption>
+        </figure>
+      </div>
+      <blockquote class="note">
+        <p>Looking back at June, all I see is pure happiness and your beautiful smile. Watching you on that swing, resting together without a single care in the world, walking side by side under the night lights... every little moment just reminded me why I fell for you in the first place. You bring so much peace and light into my life, Amna. I love you more than words can ever explain.</p>
+        <footer><span class="sig">— Sheru</span><button class="heart" data-count="1">&#10084;</button></footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ═══════════ CHAPTER III ═══════════ -->
+  <section class="chapter" id="chapter-3">
+    <div class="ch-planet planet-3">
+      <div class="ch-glow"></div>
+      <div class="ch-body"></div>
+      <div class="ch-ring"></div>
+    </div>
+    <div class="ch-head">
+      <p class="ch-num">CHAPTER III</p>
+      <h2 class="ch-name">Summer &amp; Autumn</h2>
+      <p class="ch-range">July 2026 — October 2026</p>
+      <p class="ch-lead">Padel courts, hand-written letters, a carnival in the rain, and your birthday under a sky full of fairy lights.</p>
+    </div>
+
+    <div class="month">
+      <div class="mo-head"><span class="mo-tag">JULY 2026</span><span class="mo-idx">09</span></div>
+      <h3 class="mo-name">Padel dates &amp; tired cafe smiles</h3>
+      <div class="gallery g4">
+        <figure class="shot" data-cap="Padel court dates">
+          <img src="assets/photos/jul_padel_tennis_court.jpeg" alt="Padel" loading="lazy">
+          <figcaption>Padel court</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Those smiling car rides">
+          <img src="assets/photos/jul_car_couple_smiling.jpeg" alt="Car smiling" loading="lazy">
+          <figcaption>Car rides</figcaption>
+        </figure>
+        <figure class="shot" data-cap="My tired cuto at the cafe">
+          <img src="assets/photos/jul_cafe_tired_cute.jpeg" alt="Cafe tired" loading="lazy">
+          <figcaption>My tired cuto</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Always my passenger princess">
+          <img src="assets/photos/jul_car_ride_amino.jpeg" alt="Passenger" loading="lazy">
+          <figcaption>Passenger princess</figcaption>
+        </figure>
+      </div>
+      <blockquote class="note">
+        <p>College started back up and things weren't the easiest, but being around you made every ounce of stress fade away. From playing padel tennis on the court to those quiet car rides and tired cafe dates where we barely even had to speak because just existing next to you felt like peace... I had all my hopes pinned on us, and I knew deep down we'd handle whatever came our way.</p>
+        <footer><span class="sig">— Sheru</span><button class="heart" data-count="1">&#10084;</button></footer>
+      </blockquote>
+    </div>
+
+    <div class="month">
+      <div class="mo-head"><span class="mo-tag">AUGUST 2026</span><span class="mo-idx">10</span></div>
+      <h3 class="mo-name">Letters, doodles &amp; goofy nights</h3>
+      <div class="gallery g4">
+        <figure class="shot" data-cap="I don't want anybody's hand to hold">
+          <img src="assets/photos/aug_doodle_hand_to_hold.jpeg" alt="Doodle" loading="lazy">
+          <figcaption>Your doodle</figcaption>
+        </figure>
+        <figure class="shot" data-cap="The gifts &amp; letters I made for you">
+          <img src="assets/photos/aug_red_gift_bag_letters.jpeg" alt="Gift bag" loading="lazy">
+          <figcaption>My letters for you</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Love you, heart hands">
+          <img src="assets/photos/aug_love_you_heart_doodle.jpeg" alt="Love you doodle" loading="lazy">
+          <figcaption>Love you</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Goofy park nights">
+          <img src="assets/photos/aug_night_park_tongue_selfie.jpeg" alt="Park selfie" loading="lazy">
+          <figcaption>Goofy nights</figcaption>
+        </figure>
+      </div>
+      <div class="gallery g4">
+        <figure class="shot" data-cap="Every little care, even the small ones">
+          <img src="assets/photos/aug_care_bowl_kiss.jpeg" alt="Care bowl" loading="lazy">
+          <figcaption>The little things</figcaption>
+        </figure>
+      </div>
+      <blockquote class="note">
+        <p>August reminded me how pure what we have really is. Giving you those gifts, writing all those little letters for you, the doodles, and the way you can turn any ordinary night into us laughing and sticking our tongues out like goofy kids... Things got heavy at times with college starting, but we both loved each other with our absolute all, and that's what kept us solid.</p>
+        <footer><span class="sig">— Sheru</span><button class="heart" data-count="1">&#10084;</button></footer>
+      </blockquote>
+    </div>
+
+    <div class="month">
+      <div class="mo-head"><span class="mo-tag">SEPTEMBER 2026</span><span class="mo-idx">11</span></div>
+      <h3 class="mo-name">Simfest &amp; drenched in rain</h3>
+      <div class="gallery g4">
+        <figure class="shot" data-cap="You in white, holding every word">
+          <img src="assets/photos/sep_carnival_white_dress_talk.jpeg" alt="Simfest talk" loading="lazy">
+          <figcaption>Simfest night</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Soaked and laughing together">
+          <img src="assets/photos/sep_carnival_rain_wet_selfie.jpeg" alt="Rain selfie" loading="lazy">
+          <figcaption>Drenched in rain</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Shy smiles under fairy lights">
+          <img src="assets/photos/sep_carnival_green_fairy_lights.jpeg" alt="Fairy lights" loading="lazy">
+          <figcaption>Under the lights</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Searching the crowd for you">
+          <img src="assets/photos/sep_sheru_black_event_lights.jpeg" alt="Sheru night" loading="lazy">
+          <figcaption>Looking for you</figcaption>
+        </figure>
+      </div>
+      <div class="gallery g4">
+        <figure class="shot" data-cap="Our whole little world in one frame">
+          <img src="assets/photos/sep_event_group_friends.jpeg" alt="Friends group" loading="lazy">
+          <figcaption>Our people</figcaption>
+        </figure>
+      </div>
+      <blockquote class="note">
+        <p>Simfest and the carnival... man, September was unforgettable. Getting completely drenched together in the pouring rain, laughing with our friends, seeing you look so breathtaking in white and emerald green under those fairy lights. Even though life was throwing its own complications at us, standing next to you made everything feel like an adventure.</p>
+        <footer><span class="sig">— Sheru</span><button class="heart" data-count="1">&#10084;</button></footer>
+      </blockquote>
+    </div>
+
+    <div class="month">
+      <div class="mo-head"><span class="mo-tag">OCTOBER 2026</span><span class="mo-idx">12</span></div>
+      <h3 class="mo-name">Your birthday, sunflowers &amp; soulmate</h3>
+      <div class="gallery g4">
+        <figure class="shot" data-cap="Sunflowers for my sunshine">
+          <img src="assets/photos/oct_bday_sunflower_bouquet.jpeg" alt="Sunflowers" loading="lazy">
+          <figcaption>Sunflowers for you</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Soulmate — mera chota baby">
+          <img src="assets/photos/oct_soulmate_handwritten_note.jpeg" alt="Note" loading="lazy">
+          <figcaption>Soulmate</figcaption>
+        </figure>
+        <figure class="shot" data-cap="Walking side by side into forever">
+          <img src="assets/photos/oct_park_walk_arm_around.jpeg" alt="Park walk" loading="lazy">
+          <figcaption>Walking together</figcaption>
+        </figure>
+        <figure class="shot" data-cap="My whole universe">
+          <img src="assets/photos/oct_amino_green_portrait_chair.jpeg" alt="Portrait" loading="lazy">
+          <figcaption>My whole universe</figcaption>
+        </figure>
+      </div>
+      <div class="gallery g4">
+        <figure class="shot" data-cap="The most beautiful smile I know">
+          <img src="assets/photos/oct_amino_white_embroidery_smile.jpeg" alt="Amna smiling" loading="lazy">
+          <figcaption>That smile</figcaption>
+        </figure>
+      </div>
+      <blockquote class="note">
+        <p>October was your birthday, and I know things got difficult when my own issues started surfacing too. We both had our moments of frustration... but our bond and love were so strong that even the hardest days couldn't shake us. Honestly, if we ever show our kids these memories of our first year together, they'll see that real love isn't about being perfect — it's about choosing each other through every high and low. You truly are my soulmate.</p>
+        <footer><span class="sig">— Sheru</span><button class="heart" data-count="1">&#10084;</button></footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ═══════════ FINALE ═══════════ -->
+  <section class="chapter finale" id="finale">
+    <div class="ch-planet planet-4">
+      <div class="ch-glow"></div>
+      <div class="ch-body"></div>
+      <div class="ch-ring"></div>
+    </div>
+    <div class="ch-head">
+      <p class="ch-num">THE LAST ORBIT</p>
+      <h2 class="ch-name">November 12, 2026</h2>
+      <p class="ch-range">One year. One complete revolution.</p>
+      <p class="ch-lead">Everything we were, everything we are — still here, still yours.</p>
+    </div>
+
+    <div class="gallery g4 finale-gallery">
+      <figure class="shot" data-cap="In your arms, that was home">
+        <img src="assets/photos/nov_anniv_cozy_lap_hug.jpeg" alt="Hug" loading="lazy">
+        <figcaption>In your arms</figcaption>
+      </figure>
+      <figure class="shot" data-cap="Every surprise was for your smile">
+        <img src="assets/photos/nov_anniv_trunk_gifts_balloons.jpeg" alt="Trunk surprise" loading="lazy">
+        <figcaption>Every surprise</figcaption>
+      </figure>
+      <figure class="shot" data-cap="Partners in life and in medicine">
+        <img src="assets/photos/nov_anniv_lab_coats_phone_smile.jpeg" alt="Lab coats" loading="lazy">
+        <figcaption>Partners in everything</figcaption>
+      </figure>
+      <figure class="shot" data-cap="Dressed up for my forever girl">
+        <img src="assets/photos/nov_anniv_sheru_black_formal.jpeg" alt="Sheru formal" loading="lazy">
+        <figcaption>For you</figcaption>
+      </figure>
+    </div>
+
+    <!-- ░░ THE SURPRISE ░░ -->
+    <div class="surprise-stage">
+      <button id="surprise-trigger" class="surprise-btn">
+        <span class="sb-shine"></span>
+        <span class="sb-icon">&#10022;</span>
+        <span class="sb-text">One Last Thing I Wanted To Say</span>
+        <span class="sb-hint">tap to open</span>
+      </button>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <div class="foot-line"></div>
+    <p>Made by Sheru, for Amna</p>
+    <span class="foot-sub">12 November 2026</span>
+  </footer>
+</main>
+
+<!-- ░░ THE LETTER OVERLAY ░░ -->
+<div id="letter-overlay" class="letter-overlay">
+  <div class="letter-space">
+    <canvas id="letter-canvas"></canvas>
+  </div>
+  <button id="letter-close" class="letter-close" aria-label="Close">&times;</button>
+
+  <div class="letter-scroll">
+    <div class="letter-paper">
+      <div class="letter-flourish">&#10022;</div>
+      <p class="letter-to">Amna,</p>
+
+      <p>Happy one year anniversary. I planned this back in June — this website, and a few other things I wanted to keep as a surprise for you. It's been sitting in my head for months, waiting for today.</p>
+
+      <p>Things might not be at their best between us right now. We both have our differences, ones that have me — and maybe you too — holding our guards up. I'm not going to pretend that isn't true. But I want you to know, without any condition attached to it: I have always loved you. Your motherly kind of love for me, the way you took care of me, the way you worried about me — I've loved all of it. I've loved you, and I've loved what we had, and I've loved our little family more than anything else in my life. And I'm proud of that.</p>
+
+      <p>I'm only sad about the habits we couldn't change for each other in time. Not angry, not blaming — just sad. And I'm sorry for every little thing that ever hurt you, whether it came directly from me or from something I never even saw I was doing.</p>
+
+      <p class="letter-center">Because the truth is, across every universe and every timeline — in every version of this life where I get to exist — I love you more than I love myself. That part never changes. Not in this one, not in any of them.</p>
+
+      <p>Maybe right now the differences are louder than the love. Maybe we need distance, silence, space to breathe. I don't know what comes after this — but I know what came before it was the best year of my life, and I know I'd choose it again.</p>
+
+      <p>Thank you for one whole year of being my universe.</p>
+
+      <p class="letter-sign">— Always yours, Sheru</p>
+      <div class="letter-flourish end">&#10022; &#10022; &#10022;</div>
+    </div>
+  </div>
+</div>
+
+<!-- ░░ LIGHTBOX ░░ -->
+<div id="lightbox" class="lightbox">
+  <button class="lb-close" id="lb-close">&times;</button>
+  <img id="lb-img" src="" alt="">
+  <p id="lb-cap"></p>
+</div>
+
+<!-- ░░ FINALE CELEBRATION OVERLAY ░░ -->
+<canvas id="celebration-canvas"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
